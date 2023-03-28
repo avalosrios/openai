@@ -1,0 +1,42 @@
+{
+  "name": "openai",
+  "version": "1.0.0",
+  "description": "OpenAI API ",
+  "main": "./dist/index.js",
+  "type": "module",
+  "scripts": {
+    "watch-ts": "tsc -p tsconfig.json -w",
+    "compile": "npm run codegen && tsc && cp src/schema.graphql dist/schema.graphql",
+    "start": "npm run compile && node ./dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "codegen": "graphql-codegen --config codegen.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avalosrios/openai.git"
+  },
+  "author": "Oswaldo Avalos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/avalosrios/openai/issues"
+  },
+  "homepage": "https://github.com/avalosrios/openai#readme",
+  "devDependencies": {
+    "@graphql-codegen/cli": "3.2.2",
+    "@graphql-codegen/client-preset": "2.1.1",
+    "@graphql-codegen/introspection": "3.0.1",
+    "@graphql-codegen/typescript": "^3.0.2",
+    "@graphql-codegen/typescript-resolvers": "^3.1.1",
+    "@types/node": "^18.15.2",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
+    "eslint": "^8.36.0",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.5.0",
+    "dotenv": "^16.0.3",
+    "graphql": "^16.6.0",
+    "openai": "^3.2.1"
+  }
+}
